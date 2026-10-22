@@ -1,0 +1,394 @@
+{
+  "info": {
+    "_collection_link": "https://go.postman.co/collection/58534991-cc30c179-cfe0-4386-86ee-c8d5ee81d6be?source=collection_link",
+    "_exporter_id": "58534991",
+    "_postman_id": "cc30c179-cfe0-4386-86ee-c8d5ee81d6be",
+    "name": "Movie SV API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "item": [
+        {
+          "name": "http://localhost:8080/api/v1/auth/login",
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\r\n    \"username\": \"khachhang1\",\r\n    \"password\": \"password123\"\r\n}"
+            },
+            "header": [],
+            "method": "POST",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/v1/auth/login"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/v1/tickets",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{vault:json_web_token_1c0e}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\r\n    \"userId\": 1, \r\n    \"showtimeId\": 7,\r\n    \"seatId\": 16\r\n}"
+            },
+            "header": [],
+            "method": "POST",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "tickets"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/v1/tickets"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/v1/movies/now-showing",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{vault:json_web_token_1c0e}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "movies",
+                "now-showing"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/v1/movies/now-showing"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/v1/movies/coming-soon",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{vault:json_web_token_1c0e}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "movies",
+                "coming-soon"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/v1/movies/coming-soon"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/v1/movies/1",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{vault:json_web_token_1c0e}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "movies",
+                "1"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/v1/movies/1"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/v1/cinemas",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{vault:json_web_token_0lqb}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "cinemas"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/v1/cinemas"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/v1/rooms/1/seats",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{vault:json_web_token_0lqb}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rooms",
+                "1",
+                "seats"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/v1/rooms/1/seats"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/v1/showtimes",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "showtimes"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "query": [
+                {
+                  "key": "movieId",
+                  "value": "1"
+                },
+                {
+                  "key": "date",
+                  "value": "2026-10-23"
+                }
+              ],
+              "raw": "http://localhost:8080/api/v1/showtimes?movieId=1&date=2026-10-23"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/v1/movies",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{vault:json_web_token_0f2o}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\r\n    \"title\": \"Phim Hài Tết 2027\",\r\n    \"genre\": \"Hài hước\",\r\n    \"releaseYear\": 2027,\r\n    \"status\": \"Sắp chiếu\"\r\n}"
+            },
+            "header": [],
+            "method": "POST",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "movies"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/v1/movies"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/v1/movies/1",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{vault:json_web_token_0f2o}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\r\n    \"title\": \"Phim  2027\",\r\n    \"genre\": \"Hài hước\",\r\n    \"releaseYear\": 2027,\r\n    \"status\": \"Sắp chiếu\"\r\n}"
+            },
+            "header": [],
+            "method": "PUT",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "movies",
+                "1"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/v1/movies/1"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/v1/movies/1",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{vault:json_web_token_0f2o}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "DELETE",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "movies",
+                "1"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/v1/movies/1"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Movie Ticket Bookings"
+    }
+  ]
+}
